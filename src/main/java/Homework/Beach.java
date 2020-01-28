@@ -10,12 +10,11 @@ public class Beach {
 
         System.out.println("woman1.equals(woman2) = " + woman1.equals(woman2));
 
-        Woman man1 = new Woman("Bob", 50, 777);
-        Woman man2 = new Woman("Bob", 55, 777);
-        Woman man3 = new Woman("Bob", 60, 777);
+        Man man1 = new Man("Bob", 50, 777);
+        Man man2 = new Man("Bob", 55, 777);
+        Man man3 = new Man("Bob", 60, 777);
 
-        Woman[] arraysMan = new Woman[]{man1,man2,man3};
-
+        Man[] arraysMan = new Man[]{man1,man2,man3};
         System.out.println("Arrays.toString(arraysMan) = " + Arrays.toString(arraysMan));
 
     }

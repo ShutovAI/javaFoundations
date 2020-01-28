@@ -14,21 +14,12 @@ public class Woman {
     }
 
     @Override
-    public String toString() {
-        return "Woman " +
-                "name = " + name +
-                ", age = " + age +
-                ", telephone = " + telephone;
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Woman woman = (Woman) o;
         return age == woman.age &&
-                telephone == woman.telephone &&
-                Objects.equals(name, woman.name);
+                telephone == woman.telephone;
     }
 
     @Override

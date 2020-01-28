@@ -18,12 +18,12 @@ public class Woman {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Woman woman = (Woman) o;
-        return age == woman.age &&
+        return name == woman.name && age == woman.age &&
                 telephone == woman.telephone;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(telephone);
+        return (int)Math.random() + telephone;
     }
 }

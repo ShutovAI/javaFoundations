@@ -1,16 +1,14 @@
 package Homework;
 
-import java.util.Objects;
-
 public class Woman {
     private String name;
     private int age;
-    private int telephone;
+    private int passport;
 
-    public Woman(String name, int age, int telephone) {
+    public Woman(String name, int age, int passport) {
         this.name = name;
         this.age = age;
-        this.telephone = telephone;
+        this.passport = passport;
     }
 
     @Override
@@ -19,11 +17,11 @@ public class Woman {
         if (o == null || getClass() != o.getClass()) return false;
         Woman woman = (Woman) o;
         return name == woman.name && age == woman.age &&
-                telephone == woman.telephone;
+                passport == woman.passport;
     }
 
     @Override
     public int hashCode() {
-        return (int)Math.random() + telephone;
+        return passport;
     }
 }

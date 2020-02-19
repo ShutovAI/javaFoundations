@@ -7,10 +7,8 @@ import java.util.List;
 
 public class MyListRunner {
     public static void main(String[] args) {
-
         List l = new ArrayList();
         List j = new ArrayList();
-
 
         j.add(3);
         j.add(4);

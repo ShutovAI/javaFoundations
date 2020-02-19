@@ -88,11 +88,11 @@ public class MyArrayList<T> {
 //        resAdd = array;
 //        return true;
 //
-////        for (int i = 0; i < size; i++) {
-////            resAdd[i] = (MyArrayList) array[i];
-////            return true;
-////        }
-////        return false;
+//        for (int i = 0; i < size; i++) {
+//            resAdd[i] = (MyArrayList) array[i];
+//            return true;
+//        }
+//        return false;
 //    }
 
 

@@ -1,7 +1,9 @@
 package collections;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 public class MyArrayList<T> {
     private Object[] array;
@@ -14,18 +16,16 @@ public class MyArrayList<T> {
 
     public MyArrayList(int length) {
         this.size = 0;
-        array = new Object[10];
+        array = new Object[length];
     }
 
     public int size() {
         return size;
     }
 
-
     public boolean isEmpty() {
         return size == 0;
     }
-
 
     public boolean contains(Object o) {
         for (int i = 0; i < size; i++) {
@@ -35,7 +35,6 @@ public class MyArrayList<T> {
         }
         return false;
     }
-
 
     public Object[] toArray() {
         return Arrays.copyOf(array, size);  //Массив до определенной длины
@@ -64,7 +63,7 @@ public class MyArrayList<T> {
         return result.toString();
     }
 
-    public boolean remove(Object o) {
+    public boolean remove(T o) {
         int count = 0;
         Object[] res = new Object[size];
         for (int i = 0; i < size; i++) {
@@ -81,19 +80,12 @@ public class MyArrayList<T> {
     }
 
 
-//    public boolean addAll(Collection<MyArrayList> resAdd) { // (Collection c)
-//        for (int i = 0; i < size; i++) {
-//            resAdd[i] = (MyArrayList)array[i];
-//        }
-//        resAdd = array;
-//        return true;
-//
-//        for (int i = 0; i < size; i++) {
-//            resAdd[i] = (MyArrayList) array[i];
-//            return true;
-//        }
-//        return false;
-//    }
+    public boolean addAll(List<Object> resAdd) {
+        for (Object l : resAdd) {
+            add(l);
+        }
+        return true;
+    }
 
 
     public void clear() {
@@ -140,7 +132,6 @@ public class MyArrayList<T> {
         array = tempArray;
     }
 
-
     public Object remove(int index) {
         int count = 0;
         Object[] res = new Object[size];
@@ -157,7 +148,6 @@ public class MyArrayList<T> {
         return array;
     }
 
-
     public int indexOf(Object o) {
         for (int i = 0; i < size; i++) {
             if (array[i].equals(o)) {
@@ -167,10 +157,22 @@ public class MyArrayList<T> {
         return -1;
     }
 
-
-    public boolean containsAll(Collection c) {
-
-        return false;
+    public boolean containsAll(List<T> c) {
+        List<T> res = new ArrayList();
+        for (int j = 0; j < size; j++) {
+            for (int i = 0; i < c.size(); i++) {
+                if (array[j].equals(c.get(i))) {
+                    res.add(c.get(i));
+                } else {
+                    continue;
+                }
+            }
+        }
+        if (res.equals(c)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 

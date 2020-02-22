@@ -7,14 +7,10 @@ import java.util.List;
 
 public class MyListRunner {
     public static void main(String[] args) {
-        List l = new ArrayList();
-        List j = new ArrayList();
 
-        j.add(3);
-        j.add(4);
 
         MyArrayList list = new MyArrayList();
-        MyArrayList list2 = new MyArrayList();
+        List list2 = new ArrayList();
 
 
         System.out.println("list.size() = " + list.size());
@@ -24,7 +20,7 @@ public class MyListRunner {
         System.out.println("list.size() = " + list.size());
         list.add("Торт");
         System.out.println("list.size() = " + list.size());
-        list.add("555");
+        list.add(555);
 
         System.out.println(list.toString());
         System.out.println("list.get(1) = " + list.get(1));
@@ -43,13 +39,36 @@ public class MyListRunner {
 //        System.out.println("list.clear: " + list.toString());
 
 
-//        list2.addAll(list);
-        System.out.println("list.size() = " + list.size());
-        System.out.println("list2.size() = " + list2.size());
-        System.out.println("list2: " + list2);
+        List work = new ArrayList();
+        work.add(7);
+        work.add("Бум");
+        work.add(0);
+        work.add(44);
 
-        System.out.println("l.addAll(j) = " + l.addAll(j));
-        System.out.println("l: " + l);
+        list2.add(555);
+        list2.add(7);
+        list2.add("Бум");
+
+        list.addAll(work);
+        System.out.println("list: " + list);
+
+
+        System.out.println("list.containsAll(work) = " + list.containsAll(list2));
+        System.out.println("work = " + work);
+
+
+//        MyLinkedList linkedList = new MyLinkedList();
+//        new Node ("1",new Node ("3",new Node("7",new Node("5", new Node ("0", null)))));
+//
+//        linkedList.add(1);
+//        linkedList.add(3);
+//        linkedList.add(5);
+//        linkedList.add(7);
+//
+//        System.out.println("linkedList.toString() = " + linkedList.toString());
+//        linkedList.remove(3);
+//        System.out.println("linkedList.toString() = " + linkedList.toString());
+//        linkedList.remove(1);
 
     }
 }
